@@ -1,0 +1,917 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jan 18, 2023 at 06:06 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `football`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attacking stats`
+--
+
+CREATE TABLE `attacking stats` (
+  `player_id` int(11) NOT NULL,
+  `player_name` varchar(20) NOT NULL,
+  `Position` varchar(30) NOT NULL,
+  `played_nineties` float NOT NULL,
+  `Goals` int(11) NOT NULL,
+  `Shotsperninety` int(11) NOT NULL,
+  `xG` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `attacking stats`
+--
+
+INSERT INTO `attacking stats` (`player_id`, `player_name`, `Position`, `played_nineties`, `Goals`, `Shotsperninety`, `xG`) VALUES
+(34, 'Gabriel Dos Santos', 'DF', 17, 2, 1, 2.8),
+(35, 'Aaron Ramsdale', 'GK', 17, 0, 0, 0),
+(36, 'William Saliba', 'DF', 16.8, 2, 0, 0.9),
+(37, 'Martinelli', 'FW', 16.1, 7, 3, 3.9),
+(38, 'Bukayo Saka', 'FW', 16, 6, 2, 5.6),
+(39, 'Granit Xhaka', 'MF', 16, 3, 1, 1.9),
+(40, 'Ben White', 'DF', 15.3, 0, 0, 0.3),
+(41, 'Martin Ã˜degaard', 'MF', 14.9, 7, 3, 4.8),
+(42, 'Gabriel Jesus', 'FW', 13.5, 5, 4, 7.7),
+(43, 'Thomas Partey', 'MF', 13.5, 2, 1, 1.3),
+(44, 'Oleksandr Zinchenko', 'DF', 8.1, 0, 1, 0.6),
+(45, 'Kieran Tierney', 'DF', 5.1, 0, 1, 0.3),
+(46, 'Takehiro Tomiyasu', 'DF', 5.1, 0, 0, 0.1),
+(47, 'Eddie Nketiah', 'FW', 4.7, 2, 3, 2.1),
+(48, 'Albert Sambi Lokonga', 'MF', 2.2, 0, 0, 0),
+(49, 'Fabio Vieira', 'MF,FW', 2.8, 1, 3, 0.3),
+(50, 'Mohamed Elneny', 'MF', 1.3, 0, 0, 0),
+(51, 'Reiss Nelson', 'FW', 0.7, 2, 4, 0.6),
+(52, 'Emile Smith Rowe', 'MF,FW', 0.6, 0, 4, 0.1),
+(53, 'CÃ©dric Soares', 'DF', 0.3, 0, 0, 0),
+(54, 'Rob Holding', 'DF', 0.2, 0, 0, 0),
+(55, 'Marquinhos', 'MF', 0, 0, 0, 0),
+(56, 'Ethan Nwaneri', 'FW', 0, 0, 0, 0),
+(64, 'Nick Pope', 'GK', 18, 0, 0, 0),
+(65, 'Kieran Trippier', 'DF', 17.7, 1, 0, 0.5),
+(66, 'Miguel AlmirÃ³n', 'FW', 16.5, 9, 2, 5.1),
+(67, 'Fabian SchÃ¤r', 'DF', 16.8, 1, 1, 1.7),
+(68, 'Dan Burn', 'DF', 16.6, 0, 1, 0.8),
+(69, 'Joe Willock', 'MF', 15, 2, 2, 3),
+(70, 'Joelinton', 'MF,FW', 14.8, 2, 2, 3),
+(71, 'Sven Botman', 'DF', 14.7, 0, 1, 0.7),
+(72, 'Bruno GuimarÃ£es', 'MF', 14, 3, 1, 0.9),
+(73, 'Sean Longstaff', 'MF', 14.7, 1, 1, 1.7),
+(74, 'Callum Wilson', 'FW', 9.8, 6, 3, 6.4),
+(75, 'Jacob Murphy', 'FW', 5.8, 1, 2, 0.8),
+(76, 'Chris Wood', 'FW', 4.9, 2, 2, 1.8),
+(77, 'Matt Targett', 'DF', 4.7, 0, 0, 0),
+(78, 'Allan Saint-Maximin', 'FW', 4.6, 1, 3, 0.8),
+(79, 'Ryan Fraser', 'FW', 3.5, 0, 2, 0.3),
+(80, 'Alexander Isak', 'FW', 2.7, 2, 3, 2.2),
+(81, 'Jamaal Lascelles', 'DF', 1.2, 0, 1, 0.1),
+(82, 'Elliot Anderson', 'FW,MF', 1.2, 0, 3, 0.5),
+(83, 'Jonjo Shelvey', 'MF', 0.4, 0, 0, 0),
+(84, 'Javier Manquillo', 'DF', 0.1, 0, 0, 0),
+(85, 'Jamal Lewis', 'DF', 0.1, 0, 0, 0),
+(86, 'Matt Ritchie', 'FW', 0, 0, 0, 0),
+(87, 'Emil Krafth', 'DF', 0, 0, 0, 0),
+(92, 'Ederson', 'GK', 17, 0, 0, 0),
+(93, 'Kevin De Bruyne', 'MF', 15.6, 3, 3, 3.3),
+(94, 'Rodri', 'MF', 15.4, 1, 2, 2.3),
+(95, 'Erling Haaland', 'FW', 14.5, 21, 4, 14.5),
+(96, 'JoÃ£o Cancelo', 'DF', 13.2, 2, 1, 0.8),
+(97, 'Bernardo Silva', 'MF,FW', 13.5, 2, 1, 1.4),
+(98, 'Ä°lkay GÃ¼ndoÄŸan', 'MF', 11.9, 2, 2, 2.6),
+(99, 'Phil Foden', 'FW,DF', 11, 7, 3, 3.7),
+(100, 'John Stones', 'DF', 11.1, 0, 1, 0.6),
+(101, 'Manuel Akanji', 'DF', 10.3, 0, 1, 0.5),
+(102, 'Nathan AkÃ©', 'DF', 9.3, 0, 0, 0.2),
+(103, 'RÃºben Dias', 'DF', 9.7, 0, 1, 0.6),
+(104, 'Jack Grealish', 'FW', 8.2, 1, 2, 1.7),
+(105, 'Kyle Walker', 'DF', 6.7, 0, 0, 0.3),
+(106, 'Riyad Mahrez', 'FW', 6.4, 2, 3, 2.3),
+(107, 'JuliÃ¡n Ãlvarez', 'FW,MF', 4.1, 3, 3, 1.3),
+(108, 'Aymeric Laporte', 'DF', 3.2, 0, 2, 0.2),
+(109, 'Rico Lewis', 'DF,MF', 2.6, 0, 0, 0),
+(110, 'Sergio GÃ³mez', 'DF,MF', 1.2, 0, 2, 0.1),
+(111, 'Cole Palmer', 'FW,MF', 1.2, 0, 2, 0.1),
+(112, 'Kalvin Phillips', 'MF', 0.1, 0, 0, 0),
+(120, 'Harry Kane', 'FW', 17.8, 15, 3, 10.5),
+(121, 'Hugo Lloris', 'GK', 17, 0, 0, 0),
+(122, 'Pierre HÃ¸jbjerg', 'MF', 16.8, 4, 1, 1.3),
+(123, 'Eric Dier', 'DF', 16.3, 2, 1, 0.7),
+(124, 'Son Heung-min', 'MF,FW', 14.4, 4, 3, 4.2),
+(125, 'Rodrigo Bentancur', 'MF', 13.1, 4, 1, 1.4),
+(126, 'Ivan PeriÅ¡iÄ‡', 'DF,MF', 12.2, 0, 1, 1.2),
+(127, 'Ben Davies', 'DF', 12.1, 2, 1, 0.5),
+(128, 'Emerson', 'DF', 10.3, 0, 1, 1),
+(129, 'ClÃ©ment Lenglet', 'DF', 9.3, 0, 1, 0.6),
+(130, 'Cristian Romero', 'DF', 9.3, 0, 1, 0.6),
+(131, 'Yves Bissouma', 'MF', 8.6, 0, 1, 0.2),
+(132, 'Ryan Sessegnon', 'DF', 7.8, 2, 2, 1.4),
+(133, 'Dejan Kulusevski', 'MF,FW', 7.8, 1, 2, 1),
+(134, 'Matt Doherty', 'DF,MF', 6.6, 1, 2, 0.8),
+(135, 'Davinson SÃ¡nchez', 'DF', 6.2, 0, 1, 0.3),
+(136, 'Richarlison', 'MF,FW', 4.9, 0, 3, 1.6),
+(137, 'Oliver Skipp', 'MF', 2.2, 0, 0, 0.1),
+(138, 'Bryan', 'MF,FW', 1.6, 0, 1, 0.1),
+(139, 'Fraser Forster', 'GK', 1, 0, 0, 0),
+(140, 'Japhet Tanganga', 'DF', 0.7, 0, 0, 0),
+(141, 'Lucas Moura', 'MF,DF', 1.1, 0, 1, 0.1),
+(142, 'Pape Matar Sarr', 'MF', 0.4, 0, 3, 0),
+(143, 'Djed Spence', 'FW,DF', 0.1, 0, 13, 0.1),
+(144, 'Harvey White', 'MF', 0.1, 0, 0, 0),
+(145, 'Alisson', 'GK', 17, 0, 0, 0),
+(146, 'Mohamed Salah', 'FW', 16.7, 7, 3, 8.9),
+(147, 'Virgil van Dijk', 'DF', 16.5, 2, 1, 1.1),
+(148, 'Trent Alexander-Arno', 'DF', 13.8, 1, 1, 1.2),
+(149, 'Fabinho', 'MF', 13.1, 0, 1, 0.3),
+(150, 'Andrew Robertson', 'DF', 11.7, 0, 0, 0.4),
+(151, 'Harvey Elliott', 'MF,FW', 11.3, 1, 2, 1),
+(152, 'Roberto Firmino', 'FW,MF', 10.3, 7, 3, 4.2),
+(153, 'Thiago AlcÃ¡ntara', 'MF', 9.9, 0, 1, 0.3),
+(154, 'Darwin NÃºÃ±ez', 'FW', 9.7, 5, 6, 7.4),
+(155, 'Joe Gomez', 'DF', 10, 0, 0, 0.1),
+(156, 'Jordan Henderson', 'MF', 9.1, 0, 1, 0.6),
+(157, 'Luis DÃ­az', 'FW', 6.8, 3, 2, 1.7),
+(158, 'JoÃ«l Matip', 'DF', 5.4, 0, 0, 0),
+(159, 'Kostas Tsimikas', 'DF', 4.9, 0, 1, 0.6),
+(160, 'James Milner', 'DF,MF', 5.2, 0, 1, 0.3),
+(161, 'Fabio Carvalho', 'MF,FW', 3.7, 2, 3, 1.1),
+(162, 'Alex Oxlade-Chamberl', 'FW', 2.7, 1, 1, 0.5),
+(163, 'Ibrahima KonatÃ©', 'DF', 2.2, 0, 1, 0.1),
+(164, 'Diogo Jota', 'FW,MF', 2.2, 0, 1, 0.8),
+(165, 'Curtis Jones', 'MF,FW', 2, 0, 2, 0.2),
+(166, 'Nathaniel Phillips', 'DF', 0.7, 0, 1, 0),
+(167, 'Naby KeÃ¯ta', 'MF', 1.1, 0, 3, 0.1),
+(168, 'Stefan Bajcetic', 'MF,FW', 0.4, 1, 5, 0.6),
+(169, 'Bobby Clark', 'MF', 0.1, 0, 0, 0),
+(170, 'Ben Doak', 'FW', 0, 0, 0, 0),
+(178, 'Tim Ream', 'DF', 18, 1, 0, 0.3),
+(179, 'Andreas Pereira', 'MF', 16.3, 2, 1, 3.2),
+(180, 'JoÃ£o Palhinha', 'MF', 16.7, 3, 1, 1.4),
+(181, 'Bobby Reid', 'FW,DF', 15.7, 4, 1, 3.1),
+(182, 'Harrison Reed', 'MF', 15.7, 2, 1, 1),
+(183, 'Bernd Leno', 'GK', 16, 0, 0, 0),
+(184, 'Antonee Robinson', 'DF', 15.3, 0, 0, 0),
+(185, 'Aleksandar MitroviÄ‡', 'FW', 14.2, 11, 5, 10.1),
+(186, 'Tosin Adarabioyo', 'DF', 11, 1, 0, 0.2),
+(187, 'Kenny Tete', 'DF', 10.9, 0, 0, 0.2),
+(188, 'Willian', 'FW', 9.1, 1, 2, 2.1),
+(189, 'Neeskens Kebano', 'FW', 7.9, 0, 1, 0.5),
+(190, 'Issa Diop', 'DF', 8.7, 1, 0, 0.3),
+(191, 'Daniel James', 'FW', 3.8, 1, 3, 1.3),
+(192, 'Carlos VinÃ­cius', 'FW', 3.7, 0, 1, 0.3),
+(193, 'Harry Wilson', 'FW', 3.4, 0, 2, 1.1),
+(194, 'Marek RodÃ¡k', 'GK', 2, 0, 0, 0),
+(195, 'Tom Cairney', 'MF', 4.7, 0, 2, 0.6),
+(196, 'Kevin Mbabu', 'DF,FW', 1.6, 0, 0, 0),
+(197, 'Jay Stansfield', 'FW', 1, 0, 2, 0.3),
+(198, 'Layvin Kurzawa', 'DF', 0.5, 0, 0, 0),
+(199, 'Nathaniel Chalobah', 'MF', 0.1, 0, 8, 0.1),
+(200, 'Manor Solomon', 'FW', 0.3, 0, 0, 0),
+(201, 'Josh Onomah', 'MF', 0.2, 0, 0, 0),
+(202, 'Luke Harris', 'MF,FW', 0.1, 0, 0, 0),
+(203, 'Shane Duffy', 'FW,DF', 0.1, 0, 0, 0),
+(204, 'Tyrese Francois', 'FW', 0, 0, 0, 0),
+(211, 'Robert SÃ¡nchez', 'GK', 17, 0, 0, 0),
+(212, 'Pascal GroÃŸ', 'MF,FW', 16.2, 6, 1, 3.2),
+(213, 'Solly March', 'DF,FW', 16.1, 2, 2, 3),
+(214, 'MoisÃ©s Caicedo', 'MF', 15.8, 1, 1, 0.9),
+(215, 'Leandro Trossard', 'FW,MF', 14.6, 7, 3, 4.4),
+(216, 'Alexis Mac Allister', 'MF', 14.3, 5, 2, 3.6),
+(217, 'Adam Webster', 'DF', 13, 0, 1, 1.2),
+(218, 'JoÃ«l Veltman', 'DF', 12.3, 0, 0, 0.5),
+(219, 'Danny Welbeck', 'FW', 11.1, 0, 2, 3),
+(220, 'Pervis EstupiÃ±Ã¡n', 'DF', 10, 0, 1, 0.1),
+(221, 'Adam Lallana', 'MF,FW', 7, 2, 1, 0.8),
+(222, 'Kaoru Mitoma', 'FW,MF', 6.3, 3, 2, 1.4),
+(223, 'Levi Colwill', 'DF', 4.1, 0, 0, 0.2),
+(224, 'Enock Mwepu', 'FW,MF', 2.4, 0, 1, 0.2),
+(225, 'Tariq Lamptey', 'DF', 3.4, 0, 1, 0.1),
+(226, 'Jeremy Sarmiento', 'MF', 1.4, 0, 1, 0.2),
+(227, 'Evan Ferguson', 'FW', 1.2, 2, 5, 1),
+(228, 'Billy Gilmour', 'MF', 1.2, 0, 0, 0),
+(229, 'Julio CÃ©sar Enciso', 'FW,MF', 1.3, 0, 5, 0.5),
+(230, 'Deniz Undav', 'FW,MF', 1.1, 0, 5, 0.6),
+(231, 'Andrew Moran', 'FW', 0.1, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `club`
+--
+
+CREATE TABLE `club` (
+  `Club_id` int(11) NOT NULL,
+  `Club_name` varchar(20) NOT NULL,
+  `MatchesPlayed` int(11) NOT NULL,
+  `Wins` int(11) NOT NULL,
+  `Draws` int(11) NOT NULL,
+  `Losses` int(11) NOT NULL,
+  `Goalsfor` int(11) NOT NULL,
+  `Goalsagainst` int(11) NOT NULL,
+  `Goaldifference` int(11) NOT NULL,
+  `Points` int(11) NOT NULL,
+  `PPG` float NOT NULL,
+  `xG` float NOT NULL,
+  `xGA` float NOT NULL,
+  `xGD` float NOT NULL,
+  `xGDp90` float NOT NULL,
+  `Attendance` int(11) NOT NULL,
+  `TopScorer` varchar(30) NOT NULL,
+  `Goalkeeper` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `club`
+--
+
+INSERT INTO `club` (`Club_id`, `Club_name`, `MatchesPlayed`, `Wins`, `Draws`, `Losses`, `Goalsfor`, `Goalsagainst`, `Goaldifference`, `Points`, `PPG`, `xG`, `xGA`, `xGD`, `xGDp90`, `Attendance`, `TopScorer`, `Goalkeeper`) VALUES
+(1, 'Arsenal', 17, 14, 2, 1, 40, 14, 26, 44, 2.59, 32.3, 15, 17.3, 1.02, 60, 'Gabriel Martinelli ', 'Aaron Ramsdale'),
+(2, 'Manchester City', 17, 12, 3, 2, 45, 16, 29, 39, 2.29, 35.7, 12.3, 23.4, 1.38, 53, 'Erling Haaland ', 'Ederson'),
+(3, 'Newcastle Utd', 18, 9, 8, 1, 32, 11, 21, 35, 1.94, 29.3, 16.3, 13, 0.72, 52, 'Miguel AlmirÃ³n ', 'Nick Pope'),
+(4, 'Manchester Utd', 17, 11, 2, 4, 27, 20, 7, 35, 2.06, 25.4, 19.2, 6.2, 0.36, 73, 'Marcus Rashford ', 'David de Gea'),
+(5, 'Tottenham', 18, 10, 3, 5, 37, 25, 12, 33, 1.83, 27.2, 20.4, 6.9, 0.38, 61, 'Harry Kane', 'Hugo Lloris'),
+(6, 'Liverpool', 17, 8, 4, 5, 34, 22, 12, 28, 1.65, 31.1, 23.7, 7.4, 0.44, 53, 'Mohamed Salah', 'Alisson'),
+(7, 'Fulham', 18, 8, 4, 6, 30, 27, 3, 28, 1.56, 25.4, 30.2, -4.8, -0.27, 23, 'Aleksandar MitroviÄ‡', 'Bernd Leno'),
+(8, 'Brighton', 17, 8, 3, 6, 32, 25, 7, 27, 1.59, 25.4, 22, 3.5, 0.2, 31, 'Leandro Trossard', 'Robert SÃ¡nchez'),
+(9, 'Brentford', 18, 6, 8, 4, 30, 28, 2, 26, 1.44, 25.6, 24.6, 1, 0.05, 17, 'Ivan Toney', 'David Raya'),
+(10, 'Chelsea', 17, 7, 4, 6, 20, 19, 1, 25, 1.47, 18.6, 23.3, -4.7, -0.28, 39, 'Raheem Sterling', 'Edouard Mendy');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `defensive stats`
+--
+
+CREATE TABLE `defensive stats` (
+  `player_id` int(11) NOT NULL,
+  `player_name` varchar(30) NOT NULL,
+  `position` varchar(20) NOT NULL,
+  `nineties` int(11) NOT NULL,
+  `tackles` float NOT NULL,
+  `interceptions` float NOT NULL,
+  `clearances` float NOT NULL,
+  `blocks` float NOT NULL,
+  `errorsleadingtoshots` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `defensive stats`
+--
+
+INSERT INTO `defensive stats` (`player_id`, `player_name`, `position`, `nineties`, `tackles`, `interceptions`, `clearances`, `blocks`, `errorsleadingtoshots`) VALUES
+(34, 'Gabriel Dos Santos', 'DF', 17, 24, 23, 14, 61, 2),
+(35, 'Aaron Ramsdale', 'GK', 17, 1, 0, 0, 11, 2),
+(36, 'William Saliba', 'DF', 17, 25, 9, 11, 55, 4),
+(37, 'Martinelli', 'FW', 16, 15, 13, 7, 10, 0),
+(38, 'Bukayo Saka', 'FW', 16, 21, 17, 10, 12, 0),
+(39, 'Granit Xhaka', 'MF', 16, 13, 13, 7, 26, 1),
+(40, 'Ben White', 'DF', 15, 36, 24, 12, 34, 0),
+(41, 'Martin Ã˜degaard', 'MF', 15, 16, 7, 2, 5, 0),
+(42, 'Gabriel Jesus', 'FW', 14, 19, 15, 8, 10, 1),
+(43, 'Thomas Partey', 'MF', 14, 30, 9, 16, 23, 1),
+(44, 'Oleksandr Zinchenko', 'DF', 8, 17, 6, 7, 14, 1),
+(45, 'Kieran Tierney', 'DF', 5, 8, 5, 9, 14, 0),
+(46, 'Takehiro Tomiyasu', 'DF', 5, 13, 4, 12, 13, 0),
+(47, 'Eddie Nketiah', 'FW', 5, 6, 3, 1, 3, 0),
+(48, 'Albert Sambi Lokonga', 'MF', 2, 1, 1, 5, 2, 0),
+(49, 'Fabio Vieira', 'MF,FW', 3, 4, 1, 3, 1, 0),
+(50, 'Mohamed Elneny', 'MF', 1, 1, 0, 0, 0, 0),
+(51, 'Reiss Nelson', 'FW', 1, 1, 0, 0, 0, 0),
+(52, 'Emile Smith Rowe', 'MF,FW', 1, 1, 0, 0, 2, 0),
+(53, 'CÃ©dric Soares', 'DF', 0, 0, 1, 0, 1, 0),
+(54, 'Rob Holding', 'DF', 0, 1, 0, 0, 1, 0),
+(55, 'Marquinhos', 'MF', 0, 0, 0, 0, 0, 0),
+(56, 'Ethan Nwaneri', 'FW', 0, 0, 1, 0, 0, 0),
+(64, 'Nick Pope', 'GK', 18, 1, 0, 0, 14, 1),
+(65, 'Kieran Trippier', 'DF', 18, 39, 22, 25, 33, 0),
+(66, 'Miguel AlmirÃ³n', 'FW', 17, 30, 17, 4, 8, 0),
+(67, 'Fabian SchÃ¤r', 'DF', 17, 19, 23, 27, 74, 0),
+(68, 'Dan Burn', 'DF', 17, 20, 18, 17, 68, 0),
+(69, 'Joe Willock', 'MF', 15, 31, 34, 12, 11, 0),
+(70, 'Joelinton', 'MF,FW', 15, 42, 29, 22, 23, 0),
+(71, 'Sven Botman', 'DF', 15, 16, 18, 12, 51, 1),
+(72, 'Bruno GuimarÃ£es', 'MF', 14, 39, 18, 18, 11, 1),
+(73, 'Sean Longstaff', 'MF', 15, 20, 25, 9, 15, 0),
+(74, 'Callum Wilson', 'FW', 10, 5, 1, 1, 4, 0),
+(75, 'Jacob Murphy', 'FW', 6, 8, 7, 1, 2, 0),
+(76, 'Chris Wood', 'FW', 5, 5, 2, 1, 7, 0),
+(77, 'Matt Targett', 'DF', 5, 11, 4, 7, 12, 0),
+(78, 'Allan Saint-Maximin', 'FW', 5, 1, 0, 4, 0, 0),
+(79, 'Ryan Fraser', 'FW', 4, 2, 3, 0, 3, 0),
+(80, 'Alexander Isak', 'FW', 3, 4, 3, 1, 1, 0),
+(81, 'Jamaal Lascelles', 'DF', 1, 1, 3, 0, 10, 0),
+(82, 'Elliot Anderson', 'FW,MF', 1, 5, 4, 2, 0, 0),
+(83, 'Jonjo Shelvey', 'MF', 0, 1, 1, 0, 0, 0),
+(84, 'Javier Manquillo', 'DF', 0, 1, 0, 0, 0, 0),
+(85, 'Jamal Lewis', 'DF', 0, 0, 0, 0, 0, 0),
+(86, 'Matt Ritchie', 'FW', 0, 0, 0, 0, 0, 0),
+(87, 'Emil Krafth', 'DF', 0, 0, 0, 0, 0, 0),
+(92, 'Ederson', 'GK', 17, 1, 0, 0, 7, 1),
+(93, 'Kevin De Bruyne', 'MF', 16, 18, 13, 4, 6, 0),
+(94, 'Rodri', 'MF', 15, 37, 22, 18, 20, 0),
+(95, 'Erling Haaland', 'FW', 15, 2, 6, 2, 6, 0),
+(96, 'JoÃ£o Cancelo', 'DF', 13, 29, 7, 19, 6, 1),
+(97, 'Bernardo Silva', 'MF,FW', 14, 25, 14, 8, 4, 0),
+(98, 'Ä°lkay GÃ¼ndoÄŸan', 'MF', 12, 18, 9, 11, 5, 0),
+(99, 'Phil Foden', 'FW,DF', 11, 12, 12, 3, 5, 0),
+(100, 'John Stones', 'DF', 11, 12, 8, 5, 18, 0),
+(101, 'Manuel Akanji', 'DF', 10, 16, 10, 6, 12, 0),
+(102, 'Nathan AkÃ©', 'DF', 9, 8, 7, 7, 11, 0),
+(103, 'RÃºben Dias', 'DF', 10, 6, 9, 12, 24, 0),
+(104, 'Jack Grealish', 'FW', 8, 7, 7, 3, 1, 0),
+(105, 'Kyle Walker', 'DF', 7, 2, 1, 4, 5, 0),
+(106, 'Riyad Mahrez', 'FW', 6, 7, 9, 2, 2, 0),
+(107, 'JuliÃ¡n Ãlvarez', 'FW,MF', 4, 8, 6, 0, 1, 0),
+(108, 'Aymeric Laporte', 'DF', 3, 2, 5, 1, 10, 1),
+(109, 'Rico Lewis', 'DF,MF', 3, 5, 0, 1, 3, 0),
+(110, 'Sergio GÃ³mez', 'DF,MF', 1, 2, 4, 2, 4, 0),
+(111, 'Cole Palmer', 'FW,MF', 1, 3, 0, 1, 1, 0),
+(112, 'Kalvin Phillips', 'MF', 0, 0, 1, 0, 1, 0),
+(120, 'Harry Kane', 'FW', 18, 5, 13, 1, 9, 0),
+(121, 'Hugo Lloris', 'GK', 17, 1, 0, 1, 10, 3),
+(122, 'Pierre HÃ¸jbjerg', 'MF', 17, 26, 28, 23, 26, 1),
+(123, 'Eric Dier', 'DF', 16, 14, 17, 21, 55, 1),
+(124, 'Son Heung-min', 'MF,FW', 14, 14, 9, 6, 4, 0),
+(125, 'Rodrigo Bentancur', 'MF', 13, 36, 21, 18, 15, 0),
+(126, 'Ivan PeriÅ¡iÄ‡', 'DF,MF', 12, 23, 15, 12, 13, 1),
+(127, 'Ben Davies', 'DF', 12, 13, 12, 10, 29, 0),
+(128, 'Emerson', 'DF', 10, 26, 11, 10, 28, 0),
+(129, 'ClÃ©ment Lenglet', 'DF', 9, 15, 13, 10, 25, 0),
+(130, 'Cristian Romero', 'DF', 9, 23, 12, 13, 30, 2),
+(131, 'Yves Bissouma', 'MF', 9, 11, 12, 9, 7, 0),
+(132, 'Ryan Sessegnon', 'DF', 8, 14, 8, 6, 15, 1),
+(133, 'Dejan Kulusevski', 'MF,FW', 8, 10, 5, 1, 0, 0),
+(134, 'Matt Doherty', 'DF,MF', 7, 13, 10, 8, 9, 1),
+(135, 'Davinson SÃ¡nchez', 'DF', 6, 15, 7, 10, 24, 0),
+(136, 'Richarlison', 'MF,FW', 5, 9, 8, 4, 6, 0),
+(137, 'Oliver Skipp', 'MF', 2, 3, 1, 0, 4, 0),
+(138, 'Bryan', 'MF,FW', 2, 3, 3, 1, 1, 0),
+(139, 'Fraser Forster', 'GK', 1, 0, 0, 0, 0, 0),
+(140, 'Japhet Tanganga', 'DF', 1, 2, 0, 0, 4, 0),
+(141, 'Lucas Moura', 'MF,DF', 1, 7, 0, 2, 1, 0),
+(142, 'Pape Matar Sarr', 'MF', 0, 3, 0, 1, 2, 0),
+(143, 'Djed Spence', 'FW,DF', 0, 0, 0, 0, 0, 0),
+(144, 'Harvey White', 'MF', 0, 0, 0, 0, 0, 0),
+(145, 'Alisson', 'GK', 17, 0, 1, 0, 9, 0),
+(146, 'Mohamed Salah', 'FW', 17, 7, 6, 3, 2, 0),
+(147, 'Virgil van Dijk', 'DF', 17, 10, 15, 19, 70, 1),
+(148, 'Trent Alexander-Arnold', 'DF', 14, 22, 9, 20, 17, 0),
+(149, 'Fabinho', 'MF', 13, 32, 18, 16, 19, 0),
+(150, 'Andrew Robertson', 'DF', 12, 9, 11, 6, 20, 0),
+(151, 'Harvey Elliott', 'MF,FW', 11, 13, 17, 4, 6, 0),
+(152, 'Roberto Firmino', 'FW,MF', 10, 13, 11, 6, 2, 0),
+(153, 'Thiago AlcÃ¡ntara', 'MF', 10, 31, 11, 13, 9, 2),
+(154, 'Darwin NÃºÃ±ez', 'FW', 10, 4, 5, 2, 8, 0),
+(155, 'Joe Gomez', 'DF', 10, 21, 10, 14, 29, 2),
+(156, 'Jordan Henderson', 'MF', 9, 11, 8, 9, 5, 0),
+(157, 'Luis DÃ­az', 'FW', 7, 10, 6, 2, 0, 0),
+(158, 'JoÃ«l Matip', 'DF', 5, 12, 3, 8, 25, 0),
+(159, 'Kostas Tsimikas', 'DF', 5, 9, 5, 5, 8, 0),
+(160, 'James Milner', 'DF,MF', 5, 10, 8, 7, 9, 0),
+(161, 'Fabio Carvalho', 'MF,FW', 4, 8, 6, 5, 0, 0),
+(162, 'Alex Oxlade-Chamberlain', 'FW', 3, 3, 4, 0, 3, 0),
+(163, 'Ibrahima KonatÃ©', 'DF', 2, 4, 0, 4, 10, 1),
+(164, 'Diogo Jota', 'FW,MF', 2, 10, 2, 2, 1, 0),
+(165, 'Curtis Jones', 'MF,FW', 2, 4, 1, 1, 1, 0),
+(166, 'Nathaniel Phillips', 'DF', 1, 2, 0, 2, 1, 0),
+(167, 'Naby KeÃ¯ta', 'MF', 1, 0, 1, 0, 0, 0),
+(168, 'Stefan Bajcetic', 'MF,FW', 0, 1, 1, 1, 1, 0),
+(169, 'Bobby Clark', 'MF', 0, 0, 2, 0, 0, 0),
+(170, 'Ben Doak', 'FW', 0, 1, 1, 0, 0, 0),
+(178, 'Tim Ream', 'DF', 18, 19, 27, 24, 61, 0),
+(179, 'Andreas Pereira', 'MF', 16, 11, 15, 4, 4, 0),
+(180, 'JoÃ£o Palhinha', 'MF', 17, 80, 25, 19, 30, 1),
+(181, 'Bobby Reid', 'FW,DF', 16, 25, 19, 12, 19, 0),
+(182, 'Harrison Reed', 'MF', 16, 19, 26, 11, 22, 0),
+(183, 'Bernd Leno', 'GK', 16, 0, 0, 0, 8, 0),
+(184, 'Antonee Robinson', 'DF', 15, 24, 26, 12, 39, 1),
+(185, 'Aleksandar MitroviÄ‡', 'FW', 14, 10, 13, 1, 13, 1),
+(186, 'Tosin Adarabioyo', 'DF', 11, 12, 7, 13, 58, 0),
+(187, 'Kenny Tete', 'DF', 11, 37, 18, 18, 33, 0),
+(188, 'Willian', 'FW', 9, 7, 7, 6, 3, 0),
+(189, 'Neeskens Kebano', 'FW', 8, 12, 12, 1, 8, 0),
+(190, 'Issa Diop', 'DF', 9, 12, 6, 9, 24, 0),
+(191, 'Daniel James', 'FW', 4, 4, 2, 1, 4, 0),
+(192, 'Carlos VinÃ­cius', 'FW', 4, 0, 1, 0, 3, 0),
+(193, 'Harry Wilson', 'FW', 3, 5, 5, 1, 3, 0),
+(194, 'Marek RodÃ¡k', 'GK', 2, 0, 0, 0, 1, 1),
+(195, 'Tom Cairney', 'MF', 5, 10, 7, 2, 2, 0),
+(196, 'Kevin Mbabu', 'DF,FW', 2, 3, 2, 3, 3, 0),
+(197, 'Jay Stansfield', 'FW', 1, 0, 4, 1, 1, 0),
+(198, 'Layvin Kurzawa', 'DF', 1, 2, 0, 1, 1, 0),
+(199, 'Nathaniel Chalobah', 'MF', 0, 1, 0, 0, 2, 0),
+(200, 'Manor Solomon', 'FW', 0, 1, 0, 0, 0, 0),
+(201, 'Josh Onomah', 'MF', 0, 1, 1, 0, 0, 0),
+(202, 'Luke Harris', 'MF,FW', 0, 0, 0, 0, 0, 0),
+(203, 'Shane Duffy', 'FW,DF', 0, 0, 0, 0, 0, 0),
+(204, 'Tyrese Francois', 'FW', 0, 0, 0, 0, 1, 0),
+(211, 'Robert SÃ¡nchez', 'GK', 17, 0, 0, 3, 5, 1),
+(212, 'Pascal GroÃŸ', 'MF,FW', 16, 27, 18, 6, 5, 0),
+(213, 'Solly March', 'DF,FW', 16, 25, 18, 15, 20, 0),
+(214, 'MoisÃ©s Caicedo', 'MF', 16, 47, 17, 23, 16, 1),
+(215, 'Leandro Trossard', 'FW,MF', 15, 11, 17, 6, 1, 0),
+(216, 'Alexis Mac Allister', 'MF', 14, 44, 13, 20, 5, 1),
+(217, 'Adam Webster', 'DF', 13, 10, 16, 13, 37, 2),
+(218, 'JoÃ«l Veltman', 'DF', 12, 32, 18, 13, 36, 0),
+(219, 'Danny Welbeck', 'FW', 11, 8, 10, 3, 11, 0),
+(220, 'Pervis EstupiÃ±Ã¡n', 'DF', 10, 20, 11, 17, 17, 0),
+(221, 'Adam Lallana', 'MF,FW', 7, 8, 5, 2, 1, 0),
+(222, 'Kaoru Mitoma', 'FW,MF', 6, 16, 9, 2, 4, 0),
+(223, 'Levi Colwill', 'DF', 4, 1, 2, 6, 12, 0),
+(224, 'Enock Mwepu', 'FW,MF', 2, 10, 3, 1, 1, 0),
+(225, 'Tariq Lamptey', 'DF', 3, 8, 5, 5, 2, 0),
+(226, 'Jeremy Sarmiento', 'MF', 1, 5, 0, 1, 0, 0),
+(227, 'Evan Ferguson', 'FW', 1, 0, 2, 0, 0, 0),
+(228, 'Billy Gilmour', 'MF', 1, 1, 1, 0, 2, 0),
+(229, 'Julio CÃ©sar Enciso', 'FW,MF', 1, 1, 1, 0, 0, 0),
+(230, 'Deniz Undav', 'FW,MF', 1, 2, 0, 0, 0, 0),
+(231, 'Andrew Moran', 'FW', 0, 0, 1, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `passing stats`
+--
+
+CREATE TABLE `passing stats` (
+  `player_id` int(11) NOT NULL,
+  `player_name` varchar(30) NOT NULL,
+  `Position` varchar(20) NOT NULL,
+  `nineties` int(11) NOT NULL,
+  `Passesattempted` int(11) NOT NULL,
+  `Passsuccess` float NOT NULL,
+  `Progressivedistance` float NOT NULL,
+  `Assists` int(11) NOT NULL,
+  `xA` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `passing stats`
+--
+
+INSERT INTO `passing stats` (`player_id`, `player_name`, `Position`, `nineties`, `Passesattempted`, `Passsuccess`, `Progressivedistance`, `Assists`, `xA`) VALUES
+(34, 'Gabriel Dos Santos', 'DF', 17, 1079, 89.9, 6389, 0, 0.3),
+(35, 'Aaron Ramsdale', 'GK', 17, 492, 67.3, 6212, 0, 0),
+(36, 'William Saliba', 'DF', 17, 1120, 92.1, 7151, 1, 0.2),
+(37, 'Martinelli', 'FW', 16, 551, 73, 1413, 2, 3.2),
+(38, 'Bukayo Saka', 'FW', 16, 604, 77, 1630, 6, 2.4),
+(39, 'Granit Xhaka', 'MF', 16, 796, 84.3, 3083, 4, 1.8),
+(40, 'Ben White', 'DF', 15, 991, 84.2, 4925, 2, 1.7),
+(41, 'Martin Ã˜degaard', 'MF', 15, 721, 78.8, 2705, 5, 4.1),
+(42, 'Gabriel Jesus', 'FW', 14, 402, 80.8, 1068, 5, 1.7),
+(43, 'Thomas Partey', 'MF', 14, 932, 85.7, 4333, 0, 0.7),
+(44, 'Oleksandr Zinchenko', 'DF', 8, 584, 88.5, 2563, 1, 0.9),
+(45, 'Kieran Tierney', 'DF', 5, 299, 73.9, 1309, 0, 0.3),
+(46, 'Takehiro Tomiyasu', 'DF', 5, 301, 83.4, 1535, 0, 0.1),
+(47, 'Eddie Nketiah', 'FW', 5, 119, 82.4, 185, 0, 0.2),
+(48, 'Albert Sambi Lokonga', 'MF', 2, 140, 94.3, 539, 0, 0.1),
+(49, 'Fabio Vieira', 'MF,FW', 3, 125, 78.4, 337, 1, 0.8),
+(50, 'Mohamed Elneny', 'MF', 1, 60, 95, 224, 0, 0),
+(51, 'Reiss Nelson', 'FW', 1, 39, 89.7, 63, 1, 0.2),
+(52, 'Emile Smith Rowe', 'MF,FW', 1, 22, 86.4, 75, 0, 0.2),
+(53, 'CÃ©dric Soares', 'DF', 0, 24, 79.2, 54, 0, 0),
+(54, 'Rob Holding', 'DF', 0, 6, 83.3, 21, 0, 0),
+(55, 'Marquinhos', 'MF', 0, 3, 66.7, 5, 0, 0),
+(56, 'Ethan Nwaneri', 'FW', 0, 0, 0, 0, 0, 0),
+(64, 'Nick Pope', 'GK', 18, 468, 65.6, 6220, 0, 0),
+(65, 'Kieran Trippier', 'DF', 18, 1230, 72.4, 7666, 4, 5.2),
+(66, 'Miguel AlmirÃ³n', 'FW', 17, 554, 81.6, 1513, 1, 1.8),
+(67, 'Fabian SchÃ¤r', 'DF', 17, 830, 74.3, 5412, 0, 1.1),
+(68, 'Dan Burn', 'DF', 17, 796, 79.5, 4100, 0, 0.2),
+(69, 'Joe Willock', 'MF', 15, 505, 80, 1619, 2, 2.1),
+(70, 'Joelinton', 'MF,FW', 15, 576, 80.9, 1907, 1, 1.3),
+(71, 'Sven Botman', 'DF', 15, 695, 85.9, 4681, 0, 0.9),
+(72, 'Bruno GuimarÃ£es', 'MF', 14, 763, 82, 3083, 3, 1.1),
+(73, 'Sean Longstaff', 'MF', 15, 570, 77.9, 2160, 2, 1.1),
+(74, 'Callum Wilson', 'FW', 10, 115, 70.4, 213, 2, 0.6),
+(75, 'Jacob Murphy', 'FW', 6, 174, 61.5, 384, 1, 0.8),
+(76, 'Chris Wood', 'FW', 5, 106, 62.3, 149, 0, 0.3),
+(77, 'Matt Targett', 'DF', 5, 283, 76.3, 1469, 0, 0.6),
+(78, 'Allan Saint-Maximin', 'FW', 5, 165, 69.1, 554, 3, 1.1),
+(79, 'Ryan Fraser', 'FW', 4, 122, 69.7, 289, 0, 0.3),
+(80, 'Alexander Isak', 'FW', 3, 35, 65.7, 78, 0, 0.1),
+(81, 'Jamaal Lascelles', 'DF', 1, 26, 80.8, 190, 0, 0),
+(82, 'Elliot Anderson', 'FW,MF', 1, 51, 70.6, 214, 0, 0.6),
+(83, 'Jonjo Shelvey', 'MF', 0, 26, 73.1, 176, 0, 0),
+(84, 'Javier Manquillo', 'DF', 0, 7, 57.1, 34, 0, 0),
+(85, 'Jamal Lewis', 'DF', 0, 12, 83.3, 71, 0, 0),
+(86, 'Matt Ritchie', 'FW', 0, 3, 66.7, 4, 0, 0),
+(87, 'Emil Krafth', 'DF', 0, 0, 0, 0, 0, 0),
+(92, 'Ederson', 'GK', 17, 615, 87.6, 8153, 1, 0.2),
+(93, 'Kevin De Bruyne', 'MF', 16, 921, 72.5, 3767, 9, 8),
+(94, 'Rodri', 'MF', 15, 1493, 90.6, 6236, 3, 2),
+(95, 'Erling Haaland', 'FW', 15, 235, 72.8, 437, 3, 2.2),
+(96, 'JoÃ£o Cancelo', 'DF', 13, 1137, 85.2, 3971, 1, 1.4),
+(97, 'Bernardo Silva', 'MF,FW', 14, 837, 86.7, 2115, 5, 2.4),
+(98, 'Ä°lkay GÃ¼ndoÄŸan', 'MF', 12, 699, 87.7, 2250, 2, 2),
+(99, 'Phil Foden', 'FW,DF', 11, 625, 80, 1360, 4, 2.1),
+(100, 'John Stones', 'DF', 11, 904, 94.4, 4223, 2, 0.8),
+(101, 'Manuel Akanji', 'DF', 10, 848, 94.6, 4268, 1, 0.2),
+(102, 'Nathan AkÃ©', 'DF', 9, 910, 91.6, 5106, 0, 0.4),
+(103, 'RÃºben Dias', 'DF', 10, 900, 92.2, 5430, 0, 0.1),
+(104, 'Jack Grealish', 'FW', 8, 398, 84.2, 896, 3, 2.4),
+(105, 'Kyle Walker', 'DF', 7, 656, 89.2, 3005, 0, 0.2),
+(106, 'Riyad Mahrez', 'FW', 6, 363, 87.3, 1016, 1, 1.6),
+(107, 'JuliÃ¡n Ãlvarez', 'FW,MF', 4, 125, 84.8, 205, 0, 0.4),
+(108, 'Aymeric Laporte', 'DF', 3, 250, 90.4, 1095, 0, 0.2),
+(109, 'Rico Lewis', 'DF,MF', 3, 190, 92.6, 388, 0, 0.3),
+(110, 'Sergio GÃ³mez', 'DF,MF', 1, 88, 81.8, 315, 1, 0.2),
+(111, 'Cole Palmer', 'FW,MF', 1, 66, 86.4, 134, 0, 0.3),
+(112, 'Kalvin Phillips', 'MF', 0, 9, 66.7, 19, 0, 0),
+(120, 'Harry Kane', 'FW', 18, 443, 69.3, 2019, 1, 1.6),
+(121, 'Hugo Lloris', 'GK', 17, 492, 81.5, 6083, 0, 0),
+(122, 'Pierre HÃ¸jbjerg', 'MF', 17, 1167, 88.7, 4939, 2, 1.5),
+(123, 'Eric Dier', 'DF', 16, 1152, 86.8, 7568, 0, 0.3),
+(124, 'Son Heung-min', 'MF,FW', 14, 458, 70.3, 1200, 2, 2),
+(125, 'Rodrigo Bentancur', 'MF', 13, 704, 84.7, 2643, 2, 0.6),
+(126, 'Ivan PeriÅ¡iÄ‡', 'DF,MF', 12, 611, 66.4, 2253, 5, 3.5),
+(127, 'Ben Davies', 'DF', 12, 736, 85.3, 3681, 1, 0.7),
+(128, 'Emerson', 'DF', 10, 590, 78.8, 2168, 1, 0.6),
+(129, 'ClÃ©ment Lenglet', 'DF', 9, 634, 87.9, 3969, 2, 0.6),
+(130, 'Cristian Romero', 'DF', 9, 588, 88.6, 3237, 0, 0.4),
+(131, 'Yves Bissouma', 'MF', 9, 548, 90, 1685, 0, 0.3),
+(132, 'Ryan Sessegnon', 'DF', 8, 341, 70.4, 927, 0, 0.8),
+(133, 'Dejan Kulusevski', 'MF,FW', 8, 268, 78.7, 781, 5, 2.7),
+(134, 'Matt Doherty', 'DF,MF', 7, 370, 80.5, 1124, 0, 0.3),
+(135, 'Davinson SÃ¡nchez', 'DF', 6, 386, 87.8, 1814, 0, 0.2),
+(136, 'Richarlison', 'MF,FW', 5, 135, 74.8, 472, 2, 1.1),
+(137, 'Oliver Skipp', 'MF', 2, 100, 78, 293, 0, 0.1),
+(138, 'Bryan', 'MF,FW', 2, 57, 78.9, 86, 1, 0.1),
+(139, 'Fraser Forster', 'GK', 1, 22, 81.8, 290, 0, 0),
+(140, 'Japhet Tanganga', 'DF', 1, 36, 88.9, 118, 0, 0),
+(141, 'Lucas Moura', 'MF,DF', 1, 54, 70.4, 138, 0, 0.1),
+(142, 'Pape Matar Sarr', 'MF', 0, 33, 97, 112, 0, 0),
+(143, 'Djed Spence', 'FW,DF', 0, 9, 55.6, 4, 0, 0),
+(144, 'Harvey White', 'MF', 0, 8, 37.5, 21, 0, 0),
+(145, 'Alisson', 'GK', 17, 623, 84.8, 8270, 1, 0),
+(146, 'Mohamed Salah', 'FW', 17, 455, 74.9, 1285, 4, 2.9),
+(147, 'Virgil van Dijk', 'DF', 17, 1325, 89.1, 8327, 0, 0.5),
+(148, 'Trent Alexander-Arnold', 'DF', 14, 1270, 73, 7387, 1, 3.3),
+(149, 'Fabinho', 'MF', 13, 860, 88.1, 2917, 0, 0.4),
+(150, 'Andrew Robertson', 'DF', 12, 939, 79.3, 3938, 5, 3.3),
+(151, 'Harvey Elliott', 'MF,FW', 11, 630, 80.6, 1930, 1, 2.7),
+(152, 'Roberto Firmino', 'FW,MF', 10, 439, 77.9, 1482, 3, 1.8),
+(153, 'Thiago AlcÃ¡ntara', 'MF', 10, 795, 86.2, 3673, 0, 1.1),
+(154, 'Darwin NÃºÃ±ez', 'FW', 10, 187, 65.8, 354, 2, 1.7),
+(155, 'Joe Gomez', 'DF', 10, 870, 83.9, 4941, 0, 0.2),
+(156, 'Jordan Henderson', 'MF', 9, 677, 82, 2619, 0, 1.5),
+(157, 'Luis DÃ­az', 'FW', 7, 256, 79.3, 597, 2, 0.8),
+(158, 'JoÃ«l Matip', 'DF', 5, 364, 85.2, 2073, 0, 0.1),
+(159, 'Kostas Tsimikas', 'DF', 5, 354, 76.3, 1189, 3, 0.7),
+(160, 'James Milner', 'DF,MF', 5, 354, 76, 1824, 1, 1.4),
+(161, 'Fabio Carvalho', 'MF,FW', 4, 135, 82.2, 264, 0, 0.2),
+(162, 'Alex Oxlade-Chamberlain', 'FW', 3, 79, 73.4, 301, 0, 0.2),
+(163, 'Ibrahima KonatÃ©', 'DF', 2, 151, 84.1, 792, 0, 0.2),
+(164, 'Diogo Jota', 'FW,MF', 2, 64, 59.4, 216, 1, 0.3),
+(165, 'Curtis Jones', 'MF,FW', 2, 135, 85.2, 434, 0, 0.3),
+(166, 'Nathaniel Phillips', 'DF', 1, 82, 86.6, 602, 0, 0),
+(167, 'Naby KeÃ¯ta', 'MF', 1, 77, 75.3, 269, 0, 0.1),
+(168, 'Stefan Bajcetic', 'MF,FW', 0, 27, 77.8, 56, 0, 0),
+(169, 'Bobby Clark', 'MF', 0, 1, 100, 17, 0, 0.1),
+(170, 'Ben Doak', 'FW', 0, 3, 33.3, 10, 0, 0),
+(178, 'Tim Ream', 'DF', 18, 1037, 86.1, 6685, 0, 0.1),
+(179, 'Andreas Pereira', 'MF', 16, 576, 63.5, 2308, 4, 2.3),
+(180, 'JoÃ£o Palhinha', 'MF', 17, 597, 82.9, 2150, 0, 0.2),
+(181, 'Bobby Reid', 'FW,DF', 16, 594, 70.7, 2237, 1, 0.9),
+(182, 'Harrison Reed', 'MF', 16, 609, 76.4, 1809, 1, 0.9),
+(183, 'Bernd Leno', 'GK', 16, 585, 79.5, 7020, 0, 0),
+(184, 'Antonee Robinson', 'DF', 15, 835, 73.2, 4210, 0, 0.9),
+(185, 'Aleksandar MitroviÄ‡', 'FW', 14, 313, 60.4, 622, 1, 0.9),
+(186, 'Tosin Adarabioyo', 'DF', 11, 530, 79.2, 3175, 0, 0.1),
+(187, 'Kenny Tete', 'DF', 11, 594, 72.7, 2580, 4, 0.9),
+(188, 'Willian', 'FW', 9, 360, 80.8, 1028, 2, 0.9),
+(189, 'Neeskens Kebano', 'FW', 8, 188, 73.9, 476, 3, 0.8),
+(190, 'Issa Diop', 'DF', 9, 620, 86.8, 3572, 0, 0.1),
+(191, 'Daniel James', 'FW', 4, 115, 65.2, 214, 0, 0.2),
+(192, 'Carlos VinÃ­cius', 'FW', 4, 61, 55.7, 109, 0, 0.3),
+(193, 'Harry Wilson', 'FW', 3, 120, 75.8, 224, 0, 0.2),
+(194, 'Marek RodÃ¡k', 'GK', 2, 61, 47.5, 1037, 0, 0),
+(195, 'Tom Cairney', 'MF', 5, 351, 84.9, 1192, 0, 1),
+(196, 'Kevin Mbabu', 'DF,FW', 2, 94, 72.3, 383, 1, 0.4),
+(197, 'Jay Stansfield', 'FW', 1, 23, 39.1, 32, 0, 0),
+(198, 'Layvin Kurzawa', 'DF', 1, 13, 69.2, 40, 0, 0),
+(199, 'Nathaniel Chalobah', 'MF', 0, 3, 66.7, 0, 0, 0),
+(200, 'Manor Solomon', 'FW', 0, 3, 66.7, 33, 0, 0),
+(201, 'Josh Onomah', 'MF', 0, 6, 66.7, 0, 0, 0),
+(202, 'Luke Harris', 'MF,FW', 0, 14, 92.9, 25, 0, 0),
+(203, 'Shane Duffy', 'FW,DF', 0, 4, 50, 9, 0, 0),
+(204, 'Tyrese Francois', 'FW', 0, 2, 100, 2, 0, 0),
+(211, 'Robert SÃ¡nchez', 'GK', 17, 597, 73.5, 7129, 0, 0),
+(212, 'Pascal GroÃŸ', 'MF,FW', 16, 884, 74.3, 3187, 3, 3.2),
+(213, 'Solly March', 'DF,FW', 16, 668, 72.8, 2088, 3, 2.4),
+(214, 'MoisÃ©s Caicedo', 'MF', 16, 941, 87.4, 3476, 1, 1),
+(215, 'Leandro Trossard', 'FW,MF', 15, 529, 71.6, 1920, 2, 2.1),
+(216, 'Alexis Mac Allister', 'MF', 14, 848, 88.2, 3024, 0, 1.2),
+(217, 'Adam Webster', 'DF', 13, 894, 86.1, 5331, 0, 0.3),
+(218, 'JoÃ«l Veltman', 'DF', 12, 767, 81.4, 3857, 1, 0.6),
+(219, 'Danny Welbeck', 'FW', 11, 189, 82, 298, 2, 1.1),
+(220, 'Pervis EstupiÃ±Ã¡n', 'DF', 10, 618, 79.4, 2486, 0, 1.5),
+(221, 'Adam Lallana', 'MF,FW', 7, 277, 82.7, 593, 1, 1.1),
+(222, 'Kaoru Mitoma', 'FW,MF', 6, 279, 78.5, 701, 1, 1.9),
+(223, 'Levi Colwill', 'DF', 4, 328, 88.4, 2075, 0, 0.1),
+(224, 'Enock Mwepu', 'FW,MF', 2, 78, 78.2, 126, 1, 0.2),
+(225, 'Tariq Lamptey', 'DF', 3, 188, 78.7, 534, 0, 0.3),
+(226, 'Jeremy Sarmiento', 'MF', 1, 34, 73.5, 80, 0, 0.1),
+(227, 'Evan Ferguson', 'FW', 1, 28, 78.6, 20, 1, 0),
+(228, 'Billy Gilmour', 'MF', 1, 118, 93.2, 431, 0, 0.3),
+(229, 'Julio CÃ©sar Enciso', 'FW,MF', 1, 26, 69.2, 39, 0, 0.1),
+(230, 'Deniz Undav', 'FW,MF', 1, 27, 85.2, 48, 0, 0.2),
+(231, 'Andrew Moran', 'FW', 0, 2, 50, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `player`
+--
+
+CREATE TABLE `player` (
+  `player_id` int(11) NOT NULL,
+  `player_name` varchar(30) NOT NULL,
+  `Country` varchar(20) NOT NULL,
+  `Position` varchar(20) NOT NULL,
+  `Age` varchar(11) NOT NULL,
+  `Club` varchar(20) NOT NULL,
+  `club_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `player`
+--
+
+INSERT INTO `player` (`player_id`, `player_name`, `Country`, `Position`, `Age`, `Club`, `club_id`) VALUES
+(34, 'Gabriel Dos Santos', 'br BRA', 'DF', 'Age', 'Arsenal', 1),
+(35, 'Aaron Ramsdale', 'eng ENG', 'GK', 'Age', 'Arsenal', 1),
+(36, 'William Saliba', 'fr FRA', 'DF', 'Age', 'Arsenal', 1),
+(37, 'Martinelli', 'br BRA', 'FW', 'Age', 'Arsenal', 1),
+(38, 'Bukayo Saka', 'eng ENG', 'FW', 'Age', 'Arsenal', 1),
+(39, 'Granit Xhaka', 'ch SUI', 'MF', 'Age', 'Arsenal', 1),
+(40, 'Ben White', 'eng ENG', 'DF', 'Age', 'Arsenal', 1),
+(41, 'Martin Ã˜degaard', 'no NOR', 'MF', 'Age', 'Arsenal', 1),
+(42, 'Gabriel Jesus', 'br BRA', 'FW', 'Age', 'Arsenal', 1),
+(43, 'Thomas Partey', 'gh GHA', 'MF', 'Age', 'Arsenal', 1),
+(44, 'Oleksandr Zinchenko', 'ua UKR', 'DF', 'Age', 'Arsenal', 1),
+(45, 'Kieran Tierney', 'sct SCO', 'DF', 'Age', 'Arsenal', 1),
+(46, 'Takehiro Tomiyasu', 'jp JPN', 'DF', 'Age', 'Arsenal', 1),
+(47, 'Eddie Nketiah', 'eng ENG', 'FW', 'Age', 'Arsenal', 1),
+(48, 'Albert Sambi Lokonga', 'be BEL', 'MF', 'Age', 'Arsenal', 1),
+(49, 'Fabio Vieira', 'pt POR', 'MF,FW', 'Age', 'Arsenal', 1),
+(50, 'Mohamed Elneny', 'eg EGY', 'MF', 'Age', 'Arsenal', 1),
+(51, 'Reiss Nelson', 'eng ENG', 'FW', 'Age', 'Arsenal', 1),
+(52, 'Emile Smith Rowe', 'eng ENG', 'MF,FW', 'Age', 'Arsenal', 1),
+(53, 'CÃ©dric Soares', 'pt POR', 'DF', 'Age', 'Arsenal', 1),
+(54, 'Rob Holding', 'eng ENG', 'DF', 'Age', 'Arsenal', 1),
+(55, 'Marquinhos', 'br BRA', 'MF', 'Age', 'Arsenal', 1),
+(56, 'Ethan Nwaneri', 'eng ENG', 'FW', 'Age', 'Arsenal', 1),
+(64, 'Nick Pope', 'eng ENG', 'GK', '30-264', 'Newcastle united', 3),
+(65, 'Kieran Trippier', 'eng ENG', 'DF', '32-111', 'Newcastle united', 3),
+(66, 'Miguel AlmirÃ³n', 'py PAR', 'FW', '28-332', 'Newcastle united', 3),
+(67, 'Fabian SchÃ¤r', 'ch SUI', 'DF', '31-019', 'Newcastle united', 3),
+(68, 'Dan Burn', 'eng ENG', 'DF', '30-244', 'Newcastle united', 3),
+(69, 'Joe Willock', 'eng ENG', 'MF', '23-141', 'Newcastle united', 3),
+(70, 'Joelinton', 'br BRA', 'MF,FW', '26-147', 'Newcastle united', 3),
+(71, 'Sven Botman', 'nl NED', 'DF', '22-361', 'Newcastle united', 3),
+(72, 'Bruno GuimarÃ£es', 'br BRA', 'MF', '25-053', 'Newcastle united', 3),
+(73, 'Sean Longstaff', 'eng ENG', 'MF', '25-070', 'Newcastle united', 3),
+(74, 'Callum Wilson', 'eng ENG', 'FW', '30-315', 'Newcastle united', 3),
+(75, 'Jacob Murphy', 'eng ENG', 'FW', '27-318', 'Newcastle united', 3),
+(76, 'Chris Wood', 'nz NZL', 'FW', '31-032', 'Newcastle united', 3),
+(77, 'Matt Targett', 'eng ENG', 'DF', '27-112', 'Newcastle united', 3),
+(78, 'Allan Saint-Maximin', 'fr FRA', 'FW', '25-302', 'Newcastle united', 3),
+(79, 'Ryan Fraser', 'sct SCO', 'FW', '28-318', 'Newcastle united', 3),
+(80, 'Alexander Isak', 'se SWE', 'FW', '23-109', 'Newcastle united', 3),
+(81, 'Jamaal Lascelles', 'eng ENG', 'DF', '29-058', 'Newcastle united', 3),
+(82, 'Elliot Anderson', 'sct SCO', 'FW,MF', '20-063', 'Newcastle united', 3),
+(83, 'Jonjo Shelvey', 'eng ENG', 'MF', '30-315', 'Newcastle united', 3),
+(84, 'Javier Manquillo', 'es ESP', 'DF', '28-248', 'Newcastle united', 3),
+(85, 'Jamal Lewis', 'nir NIR', 'DF', '24-348', 'Newcastle united', 3),
+(86, 'Matt Ritchie', 'sct SCO', 'FW', '33-120', 'Newcastle united', 3),
+(87, 'Emil Krafth', 'se SWE', 'DF', '28-159', 'Newcastle united', 3),
+(92, 'Ederson', 'br BRA', 'GK', '29-144', 'Manchester City', 2),
+(93, 'Kevin De Bruyne', 'be BEL', 'MF', '31-194', 'Manchester City', 2),
+(94, 'Rodri', 'es ESP', 'MF', '26-200', 'Manchester City', 2),
+(95, 'Erling Haaland', 'no NOR', 'FW', '22-171', 'Manchester City', 2),
+(96, 'João Cancelo', 'pt POR', 'DF', '28-226', 'Manchester City', 2),
+(97, 'Bernardo Silva', 'pt POR', 'MF,FW', '28-151', 'Manchester City', 2),
+(98, 'İlkay Gündoğan', 'de GER', 'MF', '32-076', 'Manchester City', 2),
+(99, 'Phil Foden', 'eng ENG', 'FW,DF', '22-225', 'Manchester City', 2),
+(100, 'John Stones', 'eng ENG', 'DF', '28-225', 'Manchester City', 2),
+(101, 'Manuel Akanji', 'ch SUI', 'DF', '27-173', 'Manchester City', 2),
+(102, 'Nathan Aké', 'nl NED', 'DF', '27-324', 'Manchester City', 2),
+(103, 'Rúben Dias', 'pt POR', 'DF', '25-239', 'Manchester City', 2),
+(104, 'Jack Grealish', 'eng ENG', 'FW', '27-120', 'Manchester City', 2),
+(105, 'Kyle Walker', 'eng ENG', 'DF', '32-225', 'Manchester City', 2),
+(106, 'Riyad Mahrez', 'dz ALG', 'FW', '31-321', 'Manchester City', 2),
+(107, 'Julián Álvarez', 'ar ARG', 'FW,MF', '22-342', 'Manchester City', 2),
+(108, 'Aymeric Laporte', 'es ESP', 'DF', '28-226', 'Manchester City', 2),
+(109, 'Rico Lewis', 'eng ENG', 'DF,MF', '18-048', 'Manchester City', 2),
+(110, 'Sergio Gómez', 'es ESP', 'DF,MF', '22-126', 'Manchester City', 2),
+(111, 'Cole Palmer', 'eng ENG', 'FW,MF', '20-247', 'Manchester City', 2),
+(112, 'Kalvin Phillips', 'eng ENG', 'MF', '27-037', 'Manchester City', 2),
+(120, 'Harry Kane', 'eng ENG', 'FW', '29-164', 'Tottenham Hotspur', 5),
+(121, 'Hugo Lloris', 'fr FRA', 'GK', '36-013', 'Tottenham Hotspur', 5),
+(122, 'Pierre Højbjerg', 'dk DEN', 'MF', '27-156', 'Tottenham Hotspur', 5),
+(123, 'Eric Dier', 'eng ENG', 'DF', '28-358', 'Tottenham Hotspur', 5),
+(124, 'Son Heung-min', 'kr KOR', 'MF,FW', '30-184', 'Tottenham Hotspur', 5),
+(125, 'Rodrigo Bentancur', 'uy URU', 'MF', '25-197', 'Tottenham Hotspur', 5),
+(126, 'Ivan Perišić', 'hr CRO', 'DF,MF', '33-340', 'Tottenham Hotspur', 5),
+(127, 'Ben Davies', 'wls WAL', 'DF', '29-259', 'Tottenham Hotspur', 5),
+(128, 'Emerson', 'br BRA', 'DF', '23-359', 'Tottenham Hotspur', 5),
+(129, 'Clément Lenglet', 'fr FRA', 'DF', '27-205', 'Tottenham Hotspur', 5),
+(130, 'Cristian Romero', 'ar ARG', 'DF', '24-256', 'Tottenham Hotspur', 5),
+(131, 'Yves Bissouma', 'ml MLI', 'MF', '26-131', 'Tottenham Hotspur', 5),
+(132, 'Ryan Sessegnon', 'eng ENG', 'DF', '22-235', 'Tottenham Hotspur', 5),
+(133, 'Dejan Kulusevski', 'se SWE', 'MF,FW', '22-258', 'Tottenham Hotspur', 5),
+(134, 'Matt Doherty', 'ie IRL', 'DF,MF', '30-357', 'Tottenham Hotspur', 5),
+(135, 'Davinson Sánchez', 'co COL', 'DF', '26-210', 'Tottenham Hotspur', 5),
+(136, 'Richarlison', 'br BRA', 'MF,FW', '25-243', 'Tottenham Hotspur', 5),
+(137, 'Oliver Skipp', 'eng ENG', 'MF', '22-114', 'Tottenham Hotspur', 5),
+(138, 'Bryan', 'es ESP', 'MF,FW', '21-331', 'Tottenham Hotspur', 5),
+(139, 'Fraser Forster', 'eng ENG', 'GK', '34-297', 'Tottenham Hotspur', 5),
+(140, 'Japhet Tanganga', 'eng ENG', 'DF', '23-283', 'Tottenham Hotspur', 5),
+(141, 'Lucas Moura', 'br BRA', 'MF,DF', '30-148', 'Tottenham Hotspur', 5),
+(142, 'Pape Matar Sarr', 'sn SEN', 'MF', '20-116', 'Tottenham Hotspur', 5),
+(143, 'Djed Spence', 'eng ENG', 'FW,DF', '22-152', 'Tottenham Hotspur', 5),
+(144, 'Harvey White', 'eng ENG', 'MF', '21-111', 'Tottenham Hotspur', 5),
+(145, 'Alisson', 'br BRA', 'GK', '30-098', 'Liverpool', 6),
+(146, 'Mohamed Salah', 'eg EGY', 'FW', '30-207', 'Liverpool', 6),
+(147, 'Virgil van Dijk', 'nl NED', 'DF', '31-184', 'Liverpool', 6),
+(148, 'Trent Alexander-Arnold', 'eng ENG', 'DF', '24-093', 'Liverpool', 6),
+(149, 'Fabinho', 'br BRA', 'MF', '29-077', 'Liverpool', 6),
+(150, 'Andrew Robertson', 'sct SCO', 'DF', '28-303', 'Liverpool', 6),
+(151, 'Harvey Elliott', 'eng ENG', 'MF,FW', '19-279', 'Liverpool', 6),
+(152, 'Roberto Firmino', 'br BRA', 'FW,MF', '31-098', 'Liverpool', 6),
+(153, 'Thiago Alcántara', 'es ESP', 'MF', '31-272', 'Liverpool', 6),
+(154, 'Darwin Núñez', 'uy URU', 'FW', '23-198', 'Liverpool', 6),
+(155, 'Joe Gomez', 'eng ENG', 'DF', '25-230', 'Liverpool', 6),
+(156, 'Jordan Henderson', 'eng ENG', 'MF', '32-205', 'Liverpool', 6),
+(157, 'Luis Díaz', 'co COL', 'FW', '25-360', 'Liverpool', 6),
+(158, 'Joël Matip', 'cm CMR', 'DF', '31-153', 'Liverpool', 6),
+(159, 'Kostas Tsimikas', 'gr GRE', 'DF', '26-241', 'Liverpool', 6),
+(160, 'James Milner', 'eng ENG', 'DF,MF', '37-004', 'Liverpool', 6),
+(161, 'Fabio Carvalho', 'pt POR', 'MF,FW', '20-131', 'Liverpool', 6),
+(162, 'Alex Oxlade-Chamberlain', 'eng ENG', 'FW', '29-146', 'Liverpool', 6),
+(163, 'Ibrahima Konaté', 'fr FRA', 'DF', '23-228', 'Liverpool', 6),
+(164, 'Diogo Jota', 'pt POR', 'FW,MF', '26-035', 'Liverpool', 6),
+(165, 'Curtis Jones', 'eng ENG', 'MF,FW', '21-343', 'Liverpool', 6),
+(166, 'Nathaniel Phillips', 'eng ENG', 'DF', '25-293', 'Liverpool', 6),
+(167, 'Naby Keïta', 'gn GUI', 'MF', '27-332', 'Liverpool', 6),
+(168, 'Stefan Bajcetic', 'es ESP', 'MF,FW', '18-078', 'Liverpool', 6),
+(169, 'Bobby Clark', 'eng ENG', 'MF', '17-335', 'Liverpool', 6),
+(170, 'Ben Doak', 'sct SCO', 'FW', '17-058', 'Liverpool', 6),
+(178, 'Tim Ream', 'us USA', 'DF', '35-095', 'Fulham', 7),
+(179, 'Andreas Pereira', 'br BRA', 'MF', '27-007', 'Fulham', 7),
+(180, 'João Palhinha', 'pt POR', 'MF', '27-183', 'Fulham', 7),
+(181, 'Bobby Reid', 'jm JAM', 'FW,DF', '29-340', 'Fulham', 7),
+(182, 'Harrison Reed', 'eng ENG', 'MF', '27-346', 'Fulham', 7),
+(183, 'Bernd Leno', 'de GER', 'GK', '30-310', 'Fulham', 7),
+(184, 'Antonee Robinson', 'us USA', 'DF', '25-153', 'Fulham', 7),
+(185, 'Aleksandar Mitrović', 'rs SRB', 'FW', '28-114', 'Fulham', 7),
+(186, 'Tosin Adarabioyo', 'eng ENG', 'DF', '25-106', 'Fulham', 7),
+(187, 'Kenny Tete', 'nl NED', 'DF', '27-091', 'Fulham', 7),
+(188, 'Willian', 'br BRA', 'FW', '34-152', 'Fulham', 7),
+(189, 'Neeskens Kebano', 'cd COD', 'FW', '30-304', 'Fulham', 7),
+(190, 'Issa Diop', 'fr FRA', 'DF', '25-364', 'Fulham', 7),
+(191, 'Daniel James', 'wls WAL', 'FW', '25-059', 'Fulham', 7),
+(192, 'Carlos Vinícius', 'br BRA', 'FW', '27-289', 'Fulham', 7),
+(193, 'Harry Wilson', 'wls WAL', 'FW', '25-292', 'Fulham', 7),
+(194, 'Marek Rodák', 'sk SVK', 'GK', '26-026', 'Fulham', 7),
+(195, 'Tom Cairney', 'sct SCO', 'MF', '31-353', 'Fulham', 7),
+(196, 'Kevin Mbabu', 'ch SUI', 'DF,FW', '27-264', 'Fulham', 7),
+(197, 'Jay Stansfield', 'eng ENG', 'FW', '20-045', 'Fulham', 7),
+(198, 'Layvin Kurzawa', 'fr FRA', 'DF', '30-126', 'Fulham', 7),
+(199, 'Nathaniel Chalobah', 'eng ENG', 'MF', '28-027', 'Fulham', 7),
+(200, 'Manor Solomon', 'il ISR', 'FW', '23-168', 'Fulham', 7),
+(201, 'Josh Onomah', 'eng ENG', 'MF', '25-256', 'Fulham', 7),
+(202, 'Luke Harris', 'wls WAL', 'MF,FW', '17-280', 'Fulham', 7),
+(203, 'Shane Duffy', 'ie IRL', 'FW,DF', '31-007', 'Fulham', 7),
+(204, 'Tyrese Francois', 'au AUS', 'FW', '22-176', 'Fulham', 7),
+(211, 'Robert Sánchez', 'es ESP', 'GK', '25-051', 'Brighton', 8),
+(212, 'Pascal Groß', 'de GER', 'MF,FW', '31-207', 'Brighton', 8),
+(213, 'Solly March', 'eng ENG', 'DF,FW', '28-172', 'Brighton', 8),
+(214, 'Moisés Caicedo', 'ec ECU', 'MF', '21-067', 'Brighton', 8),
+(215, 'Leandro Trossard', 'be BEL', 'FW,MF', '28-035', 'Brighton', 8),
+(216, 'Alexis Mac Allister', 'ar ARG', 'MF', '24-015', 'Brighton', 8),
+(217, 'Adam Webster', 'eng ENG', 'DF', '28-004', 'Brighton', 8),
+(218, 'Joël Veltman', 'nl NED', 'DF', '30-358', 'Brighton', 8),
+(219, 'Danny Welbeck', 'eng ENG', 'FW', '32-043', 'Brighton', 8),
+(220, 'Pervis Estupiñán', 'ec ECU', 'DF', '24-352', 'Brighton', 8),
+(221, 'Adam Lallana', 'eng ENG', 'MF,FW', '34-243', 'Brighton', 8),
+(222, 'Kaoru Mitoma', 'jp JPN', 'FW,MF', '25-233', 'Brighton', 8),
+(223, 'Levi Colwill', 'eng ENG', 'DF', '19-316', 'Brighton', 8),
+(224, 'Enock Mwepu', 'zm ZAM', 'FW,MF', '25-007', 'Brighton', 8),
+(225, 'Tariq Lamptey', 'gh GHA', 'DF', '22-100', 'Brighton', 8),
+(226, 'Jeremy Sarmiento', 'ec ECU', 'MF', '20-206', 'Brighton', 8),
+(227, 'Evan Ferguson', 'ie IRL', 'FW', '18-081', 'Brighton', 8),
+(228, 'Billy Gilmour', 'sct SCO', 'MF', '21-211', 'Brighton', 8),
+(229, 'Julio César Enciso', 'py PAR', 'FW,MF', '18-350', 'Brighton', 8),
+(230, 'Deniz Undav', 'de GER', 'FW,MF', '26-173', 'Brighton', 8),
+(231, 'Andrew Moran', 'ie IRL', 'FW', '19-085', 'Brighton', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `username` varchar(255) NOT NULL,
+  `pwd` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `pwd`) VALUES
+('sumanth7502', '123');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `attacking stats`
+--
+ALTER TABLE `attacking stats`
+  ADD PRIMARY KEY (`player_id`);
+
+--
+-- Indexes for table `club`
+--
+ALTER TABLE `club`
+  ADD PRIMARY KEY (`Club_id`);
+
+--
+-- Indexes for table `defensive stats`
+--
+ALTER TABLE `defensive stats`
+  ADD PRIMARY KEY (`player_id`);
+
+--
+-- Indexes for table `passing stats`
+--
+ALTER TABLE `passing stats`
+  ADD PRIMARY KEY (`player_id`);
+
+--
+-- Indexes for table `player`
+--
+ALTER TABLE `player`
+  ADD PRIMARY KEY (`player_id`),
+  ADD KEY `Foreign Key` (`club_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `attacking stats`
+--
+ALTER TABLE `attacking stats`
+  ADD CONSTRAINT `ForeignKey` FOREIGN KEY (`player_id`) REFERENCES `player` (`player_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `defensive stats`
+--
+ALTER TABLE `defensive stats`
+  ADD CONSTRAINT `ForeignKey_` FOREIGN KEY (`player_id`) REFERENCES `player` (`player_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `passing stats`
+--
+ALTER TABLE `passing stats`
+  ADD CONSTRAINT `Foreign Key_` FOREIGN KEY (`player_id`) REFERENCES `player` (`player_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `player`
+--
+ALTER TABLE `player`
+  ADD CONSTRAINT `Foreign Key` FOREIGN KEY (`club_id`) REFERENCES `club` (`Club_id`) ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
